@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "fname": "kan",
+        "lname": "Dana",
+        "gender": 2,
+        "branch": 2,
+        "email": "kansokmean006@gmail.com",
+        "photo": "..\/..\/storage\/photo\/customer\/67982e3081026.jpg"
+    },
+    {
+        "id": 3,
+        "fname": "Mann",
+        "lname": "vannda",
+        "gender": 2,
+        "branch": 2,
+        "email": "kansokmean06@gmail.com",
+        "photo": "..\/..\/storage\/photo\/customer\/6798e6078b59e.jpg"
+    },
+    {
+        "id": 4,
+        "fname": "Kan",
+        "lname": "Sreykeo",
+        "gender": 2,
+        "branch": 1,
+        "email": "kansokmean@gmail.com",
+        "photo": "..\/..\/storage\/photo\/customer\/6798377c724d0.jpg"
+    },
+    {
+        "id": 5,
+        "fname": "Kan",
+        "lname": "Sokmean",
+        "gender": 1,
+        "branch": 3,
+        "email": "kansokmean@gmail.com",
+        "photo": "..\/..\/storage\/photo\/customer\/679864af8f794.jpg"
+    }
+]
