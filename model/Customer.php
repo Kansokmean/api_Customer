@@ -78,39 +78,24 @@ class Customer
             'data' => $temp
         ]);
     }
-    // public function index()
-    // {
-    //     $arr = [];
-    //     if (file_exists(self::FILE_DATA)) {
-    //         $arr = json_decode(file_get_contents(self::FILE_DATA, true));
-    //     }
-
-    //     return json_encode([
-    //         'result' => true,
-    //         'message' => 'Get data successfully.',
-    //         'data' => $arr
-    //     ]);
-    // }
     public function index()
-{
-    $arr = [];
-    if (file_exists(self::FILE_DATA)) {
-        $arr = json_decode(file_get_contents(self::FILE_DATA), true);
-        
-        // Modify photo path for each customer
-        foreach ($arr as &$cus) {
-            if (!empty($cus['photo'])) {
-                $cus['photo'] = self::DIR_PHOTO . $cus['photo'];
+    {
+        $arr = [];
+        if (file_exists(self::FILE_DATA)) {
+            $arr = json_decode(file_get_contents(self::FILE_DATA), true);
+            foreach ($arr as &$cus) {
+                if (!empty($cus['photo'])) {
+                    $cus['photo'] = self::DIR_PHOTO . $cus['photo'];
+                }
             }
         }
-    }
 
-    return json_encode([
-        'result' => true,
-        'message' => 'Get data successfully.',
-        'data' => $arr
-    ]);
-}
+        return json_encode([
+            'result' => true,
+            'message' => 'Get data successfully.',
+            'data' => $arr
+        ]);
+    }
 
     public function destroy()
     {
@@ -125,8 +110,8 @@ class Customer
         foreach ($arr as $index => $item) {
             if ($item['id'] == $this->id) {
                 $found = true;
-                if ($item['photo'] && file_exists($item['photo'])) {
-                    unlink($item['photo']);
+                if ($item['photo'] && file_exists(self::DIR_PHOTO . $item['photo'])) {
+                    unlink(self::DIR_PHOTO . $item['photo']);
                 }
                 array_splice($arr, $index, 1);
                 break;
@@ -163,8 +148,8 @@ class Customer
 
         foreach ($data as $index => $item) {
             if ($item['id'] == $this->id) {
-                if ($item['photo'] && file_exists($item['photo'])) {
-                    unlink($item['photo']);
+                if ($item['photo'] && file_exists(self::DIR_PHOTO . $item['photo'])) {
+                    unlink(self::DIR_PHOTO . $item['photo']);
                     $data[$index]['photo'] = null;
                     $found = true;
                     break;
@@ -227,7 +212,7 @@ class Customer
 
                 if ($this->file && !empty($filename)) {
                     if (!empty($item['photo']) && file_exists(self::DIR_PHOTO . $item['photo'])) {
-                        unlink( self::DIR_PHOTO . $item['photo']);
+                        unlink(self::DIR_PHOTO . $item['photo']);
                     }
                     $data[$index]['photo'] = $filename;
                 } else {
@@ -257,23 +242,36 @@ class Customer
         if (!file_exists(self::FILE_DATA)) {
             return json_encode([
                 'result' => false,
-                'message' => 'File data not found.'
+                'message' => 'File data empty.',
+                'data' => [
+                'total_male' => 0, 
+                'total_female' => 0, 
+                'total_kd' => 0, 
+                'total_pp' =>  0, 
+                'total_pv' =>  0, 
+                'total' =>  0
+            ]
             ]);
         }
 
         $data = json_decode(file_get_contents(self::FILE_DATA), true);
-        $branchCount = array_count_values(array_column($data, 'branch'));
-        $genderCount = array_count_values(array_column($data, 'gender'));
 
-        $branchCountArray = array_values($branchCount);
-        $genderCountArray = array_values($genderCount);
+        $genders = array_column($data, 'gender');
+        $branches = array_column($data, 'branch');
+
+        $genderCount = array_count_values($genders);
+        $branchCount = array_count_values($branches);
 
         return json_encode([
             'result' => true,
-            'message' => 'Branch and gender count retrieved successfully.',
+            'message' => 'Get data chart successfully',
             'data' => [
-                'branch' => $branchCountArray,
-                'gender' => $genderCountArray
+                'total_male' => $genderCount[1] ?? 0, 
+                'total_female' => $genderCount[2] ?? 0, 
+                'total_kd' => $branchCount[1] ?? 0, 
+                'total_pp' => $branchCount[2] ?? 0, 
+                'total_pv' => $branchCount[3] ?? 0, 
+                'total' => count($data) ?? 0
             ]
         ]);
     }

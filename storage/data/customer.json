@@ -2,37 +2,28 @@
     {
         "id": 1,
         "fname": "Kan",
-        "lname": "Dana",
+        "lname": "Sokmean",
+        "gender": 1,
+        "branch": 2,
+        "email": "kansokmean@gmail.com",
+        "photo": "679b9e02f11ae.jpg"
+    },
+    {
+        "id": 2,
+        "fname": "Chan",
+        "lname": "Nimol",
         "gender": 2,
-        "branch": 1,
-        "email": "kansokmean006@gmail.com",
-        "photo": "679b0346e8dfb.jpg"
+        "branch": 3,
+        "email": "sreymol@gmail.com",
+        "photo": "679b9dc72ec38.jpg"
     },
     {
         "id": 3,
-        "fname": "Mann",
-        "lname": "vannda",
-        "gender": 2,
-        "branch": 2,
-        "email": "kansokmean06@gmail.com",
-        "photo": "679b053f4906a.jpg"
-    },
-    {
-        "id": 5,
-        "fname": "dara",
-        "lname": "Sokmean",
-        "gender": 1,
-        "branch": 3,
-        "email": "kansokmean@gmail.com",
-        "photo": "679864af8f794.jpg"
-    },
-    {
-        "id": 9,
         "fname": "Kan",
-        "lname": "Sokmean",
+        "lname": "Sokkeo",
         "gender": 1,
-        "branch": 2,
-        "email": "kansokmean306@gmail.com",
-        "photo": "679b0070cf20c.jpg"
+        "branch": 1,
+        "email": "kansokmean06@gmail.com",
+        "photo": "679b9da51a742.jpg"
     }
 ]
