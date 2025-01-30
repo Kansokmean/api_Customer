@@ -1,12 +1,12 @@
 [
     {
         "id": 1,
-        "fname": "kan",
+        "fname": "Kan",
         "lname": "Dana",
         "gender": 2,
-        "branch": 2,
+        "branch": 1,
         "email": "kansokmean006@gmail.com",
-        "photo": "..\/..\/storage\/photo\/customer\/67982e3081026.jpg"
+        "photo": "679b0346e8dfb.jpg"
     },
     {
         "id": 3,
@@ -15,24 +15,24 @@
         "gender": 2,
         "branch": 2,
         "email": "kansokmean06@gmail.com",
-        "photo": "..\/..\/storage\/photo\/customer\/6798e6078b59e.jpg"
-    },
-    {
-        "id": 4,
-        "fname": "Kan",
-        "lname": "Sreykeo",
-        "gender": 2,
-        "branch": 1,
-        "email": "kansokmean@gmail.com",
-        "photo": "..\/..\/storage\/photo\/customer\/6798377c724d0.jpg"
+        "photo": "679b053f4906a.jpg"
     },
     {
         "id": 5,
-        "fname": "Kan",
+        "fname": "dara",
         "lname": "Sokmean",
         "gender": 1,
         "branch": 3,
         "email": "kansokmean@gmail.com",
-        "photo": "..\/..\/storage\/photo\/customer\/679864af8f794.jpg"
+        "photo": "679864af8f794.jpg"
+    },
+    {
+        "id": 9,
+        "fname": "Kan",
+        "lname": "Sokmean",
+        "gender": 1,
+        "branch": 2,
+        "email": "kansokmean306@gmail.com",
+        "photo": "679b0070cf20c.jpg"
     }
 ]
